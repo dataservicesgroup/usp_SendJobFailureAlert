@@ -1,4 +1,4 @@
-# sp_SendJobFailureAlert
+# usp_SendJobFailureAlert
 
 A smarter way to handle SQL Server Agent job failure alerts.
 
@@ -30,13 +30,13 @@ This procedure allows you to:
   - select msdb.dbo.sysjobhistory
   - execute msdb.dbo.agent_datetime
   - execute msdb.dbo.sp_send_dbmail
-  - execute dbo.sp_SendJobFailureAlert
+  - execute dbo.usp_SendJobFailureAlert
 
 ---
 
 ## Installation
 
-1. Download `sp_SendJobFailureAlert.sql`
+1. Download `usp_SendJobFailureAlert.sql`
 2. Deploy to a user database (choose a system database if you want - it's up to you)
 3. The script will handle permissions provided the login exists and has public access to msdb and the database you deploy to
 
@@ -64,7 +64,7 @@ This procedure allows you to:
 3. Add a final step that executes:
 
 ```sql
-EXEC dbo.sp_SendJobFailureAlert
+EXEC dbo.usp_SendJobFailureAlert
     @JobName = 'Your Job Name',
     @ToEmail = 'dba@company.com',
     @FailureThreshold = 3,
