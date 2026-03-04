@@ -18,7 +18,7 @@ EXEC sp_add_jobstep
     @step_name = N'Alert Step',
     @subsystem = N'TSQL',
     @command = N'
-        EXEC dbo.sp_SendJobFailureAlert
+        EXEC dbo.usp_SendJobFailureAlert
             @JobName = 'Your Job Name',
             @ToEmail = 'dba@company.com',
             @FailureThreshold = 3,

@@ -1,4 +1,4 @@
-EXEC dbo.sp_SendJobFailureAlert
+EXEC dbo.usp_SendJobFailureAlert
     @JobName = 'Example Failing Job',
     @ToEmail = 'dba@company.com',
     @FailureThreshold = 2,
